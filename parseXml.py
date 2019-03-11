@@ -25,7 +25,7 @@ strXml = '\
 		<neighbor name="Costa Rica" direction="W"/>\
 		<neighbor name="Colombia" direction="E"/>\
 	</country>\
-#</data>'
+</data>'
 #from file
 #tree = ET.parse('country_data.xml')
 #root = tree.getroot()
@@ -33,17 +33,18 @@ strXml = '\
 #from string
 root = ET.fromstring(strXml)
 
-#for child in root:
-#	print (child.tag, child.attrib)
-#	for subchild in child:
-#		print (subchild.tag)
-#		print (subchild.attrib)
-#		print (subchild.text)
+for child in root:
+	print (child.tag, child.attrib)
+	for subchild in child:
+		print (subchild.tag)
+		print (subchild.attrib)
+		print (subchild.text)
+print ('')
 
 for child in root:
 	print ('Tag: ' + child.tag)
 	#print (child.attrib)
-	print ('Attribute [name] ' + child.attrib['name'])
+	print ('Attribute [name]: ' + child.attrib['name'])
 	for subchild in child:
 		print ('Tag: ' + subchild.tag)
 		if subchild.attrib:
@@ -52,3 +53,8 @@ for child in root:
 			print ('Attribute [name]: ' + subchild.attrib['name'])
 		if subchild.text:
 			print ('Text: ' + subchild.text)
+print ('')
+			
+for country in root.findall("./country"):
+	print('Name: ' + str( country.attrib['name'] ))
+	
