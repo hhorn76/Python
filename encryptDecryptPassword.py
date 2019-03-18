@@ -15,7 +15,7 @@ print ('')
 def encryptPw (strPassword):
 	return base64.b64encode(strPassword)
 
-# Function to encrypt password
+# Function to decrypt password
 def decryprPw (strPassword):
 	return base64.b64decode(strPassword)
 
