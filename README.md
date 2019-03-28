@@ -1,2 +1,2 @@
 # Python
-Python Scripts and Functions
+Python Scripts and Functions for macOS
